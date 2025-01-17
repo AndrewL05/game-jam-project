@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp8fqwwttipmc"]
+
+[ext_resource type="PackedScene" uid="uid://cts6qa5dvoqeo" path="res://Assets/Detecitive_Office_Pack.fbx" id="1_47mgi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgr6m"]
+size = Vector3(20, 15, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mc84x"]
+size = Vector3(20, 15, 10)
+
+[node name="Detecitive Office" instance=ExtResource("1_47mgi")]
+
+[node name="Point_003" parent="Ceilling_Fan" index="0"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, -1.62921e-09, 0, 1.62921e-09, 0.01, -0.0281463, -0.0314542, 0.0376312)
+omni_range = 10.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_sgr6m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" index="1"]
+mesh = SubResource("BoxMesh_mc84x")
