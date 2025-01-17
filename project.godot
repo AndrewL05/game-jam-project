@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="HauntingTruths"
-run/main_scene="res://Scenes/environment_test.tscn"
+run/main_scene="res://Scenes/detective_office.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
 
 [input]
 

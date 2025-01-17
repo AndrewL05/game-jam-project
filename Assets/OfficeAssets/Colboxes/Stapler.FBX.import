@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cts6qa5dvoqeo"
-path="res://.godot/imported/Detecitive_Office_Pack.fbx-34ef0a53a9df5e09e3b8437068cc0410.scn"
+uid="uid://1lyviwwn01tg"
+path="res://.godot/imported/Stapler.FBX-a3f5b5cf977f5665d39b1f2af72bba37.scn"
 
 [deps]
 
-source_file="res://Assets/Detecitive_Office_Pack.fbx"
-dest_files=["res://.godot/imported/Detecitive_Office_Pack.fbx-34ef0a53a9df5e09e3b8437068cc0410.scn"]
+source_file="res://Assets/OfficeAssets/Colboxes/Stapler.FBX"
+dest_files=["res://.godot/imported/Stapler.FBX-a3f5b5cf977f5665d39b1f2af72bba37.scn"]
 
 [params]
 
