@@ -1,10 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://cqi8er33lgegk"]
+[gd_scene load_steps=49 format=3 uid="uid://b2025hrk8tsa6"]
 
 [ext_resource type="PackedScene" uid="uid://kv7xkr8bbw40" path="res://Scenes/player.tscn" id="1_1eem4"]
 [ext_resource type="Texture2D" uid="uid://cfipk4c80lg0m" path="res://Materials/textures/Walls_1/Walls_1_Displacement.png" id="1_irfpa"]
 [ext_resource type="PackedScene" uid="uid://cnm8nfbj88gpi" path="res://Assets/Hospital Room Pack/drawer.fbx" id="2_eid8g"]
 [ext_resource type="PackedScene" uid="uid://dk5lk1n42u3jn" path="res://Assets/Hospital Room Pack/bed_table.fbx" id="2_q8b00"]
-[ext_resource type="Material" uid="uid://devdpm2iha86v" path="res://Materials/wall.tres" id="3_5co8w"]
+[ext_resource type="Material" path="res://Materials/wall.tres" id="3_5co8w"]
 [ext_resource type="PackedScene" uid="uid://cknb602wg0uw2" path="res://Assets/Hospital Room Pack/big_chair.fbx" id="3_ln3hq"]
 [ext_resource type="PackedScene" uid="uid://sax1ma0ocijq" path="res://Assets/Hospital Room Pack/broom.fbx" id="4_4i45r"]
 [ext_resource type="PackedScene" uid="uid://dpb0c4d4cmlou" path="res://Assets/Hospital Room Pack/clock.fbx" id="5_6vcdd"]
@@ -18,15 +18,15 @@
 [ext_resource type="PackedScene" uid="uid://byqwoi24871kh" path="res://Assets/Hospital Room Pack/table.fbx" id="14_143lj"]
 [ext_resource type="PackedScene" uid="uid://grjmei5yu5sq" path="res://Assets/Hospital Room Pack/TV.fbx" id="15_7i3hm"]
 [ext_resource type="Texture2D" uid="uid://cshud5lp3vm6s" path="res://Materials/textures/ceiling_1/Ceiling_1_Roughness.png" id="18_qccm2"]
-[ext_resource type="PackedScene" uid="uid://dlmfdu0o61mkd" path="res://Scenes/light.tscn" id="19_tlxo8"]
+[ext_resource type="PackedScene" path="res://Scenes/light.tscn" id="19_tlxo8"]
 [ext_resource type="PackedScene" uid="uid://bo4gcrgy5jh2r" path="res://Assets/OfficeAssets/Lamp.FBX" id="20_qscd0"]
-[ext_resource type="Material" uid="uid://boufln2bgalv6" path="res://Materials/light.tres" id="21_l36ij"]
+[ext_resource type="Material" path="res://Materials/light.tres" id="21_l36ij"]
 [ext_resource type="PackedScene" uid="uid://xib2gk40a8ju" path="res://Assets/OfficeAssets/ShelfBox.FBX" id="22_4eerw"]
 [ext_resource type="PackedScene" uid="uid://bsm074hmt11a4" path="res://Assets/OfficeAssets/WaterDispenser.FBX" id="23_c72im"]
 [ext_resource type="PackedScene" uid="uid://cyi1qwt854otc" path="res://Assets/OfficeAssets/Colboxes/Bin.FBX" id="24_sgu8a"]
-[ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="25_02pdr"]
+[ext_resource type="PackedScene" path="res://Scenes/ui.tscn" id="25_02pdr"]
 [ext_resource type="Script" path="res://Scripts/beginning_cutscene.gd" id="26_d3tfw"]
-[ext_resource type="PackedScene" uid="uid://djvulatl0va51" path="res://Scenes/door.tscn" id="27_dcrbt"]
+[ext_resource type="PackedScene" path="res://Scenes/door.tscn" id="27_dcrbt"]
 
 [sub_resource type="Environment" id="Environment_fo1bc"]
 background_mode = 1
@@ -77,6 +77,33 @@ size = Vector3(1.47984, 3.9474, 1.19806)
 [sub_resource type="BoxShape3D" id="BoxShape3D_npby6"]
 size = Vector3(2.03206, 1.23323, 1.53444)
 
+[sub_resource type="Animation" id="Animation_iyy0v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cutscene_cam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.131422, 0.148009, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cutscene_cam:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.841249, 3.14159, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_8i4xx"]
 resource_name = "beginning"
 length = 8.0
@@ -103,33 +130,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.841249, 3.14159, 0), Vector3(0.624828, 2.38237, 0), Vector3(0.300197, 3.79086, 0), Vector3(-0.153589, 4.11723, 0), Vector3(0, 3.14159, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_iyy0v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cutscene_cam:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.131422, 0.148009, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("cutscene_cam:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.841249, 3.14159, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fr41b"]
@@ -435,7 +435,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75839, 2.14814, -34.0637)
 script = ExtResource("26_d3tfw")
 
 [node name="cutscene_cam" type="Camera3D" parent="beginning_cutscene"]
-transform = Transform3D(-1, -6.51716e-08, -5.82701e-08, 0, 0.666532, -0.745476, 8.74228e-08, -0.745476, -0.666532, 0.131422, 0.148009, 0)
+transform = Transform3D(-1, 1.88992e-06, 1.68978e-06, 0, 0.666532, -0.745476, -2.53518e-06, -0.745476, -0.666532, 0.131422, 0.148009, 0)
 current = true
 far = 30.0
 

@@ -1,17 +1,20 @@
 [remap]
+
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6afs7ehsk2hm"
-path="res://.godot/imported/background.jpg-b3a2c7d1c105d56ba01ce5ef14c041a0.ctex"
+uid="uid://b5pkcn2bfq7o3"
+path="res://.godot/imported/Back col_Square Button.png-f1df2e471fbad5c4d0fd01afe421f836.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
-source_file="res://Assets/background.jpg"
-dest_files=["res://.godot/imported/background.jpg-b3a2c7d1c105d56ba01ce5ef14c041a0.ctex"]
+
+source_file="res://Assets/Menu Buttons/Square Buttons/Colored Square Buttons/Back col_Square Button.png"
+dest_files=["res://.godot/imported/Back col_Square Button.png-f1df2e471fbad5c4d0fd01afe421f836.ctex"]
 
 [params]
+
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
@@ -19,7 +22,7 @@ compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
-mipmaps/limit=0
+mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
