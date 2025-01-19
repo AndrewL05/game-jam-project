@@ -1,20 +1,23 @@
 [gd_scene load_steps=19 format=3 uid="uid://boyecd4lj614f"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_nr80y"]
+[ext_resource type="Texture2D" uid="uid://cjupiahvmsnwg" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Start  col_Button.png" id="2_8w0md"]
 [ext_resource type="Texture2D" uid="uid://6afs7esk2h1m" path="res://Assets/background.jpg" id="2_73gv5"]
-[ext_resource type="FontFile" uid="uid://c8djud1br7gjv" path="res://Assets/font.ttf" id="3_talgo"]
-[ext_resource type="Texture2D" uid="uid://cjupiahvmsnwg" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Start  col_Button.png" id="4_wiimi"]
-[ext_resource type="Texture2D" uid="uid://crx6apunchcpk" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Start Button.png" id="5_rfnky"]
-[ext_resource type="Texture2D" uid="uid://bhvtvifexw24b" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Options  col_Button.png" id="6_j85cx"]
-[ext_resource type="Texture2D" uid="uid://8dtnlnbfuu50" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Options Button.png" id="7_8fewq"]
-[ext_resource type="Texture2D" uid="uid://d3ggwkijjtnus" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Controls  col_Button.png" id="8_rbvcd"]
-[ext_resource type="Texture2D" uid="uid://bb2esnmprbhec" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Controls Button.png" id="9_a10mp"]
-[ext_resource type="Texture2D" uid="uid://bbkiep1eg5amm" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Quit  col_Button.png" id="10_v05ku"]
-[ext_resource type="Texture2D" uid="uid://dxhwwxdeabajw" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Quit Button.png" id="11_8fewq"]
-[ext_resource type="Texture2D" uid="uid://bubgnsnrpr5fx" path="res://Assets/Menu Buttons/Square Buttons/Colored Square Buttons/Audio col_Square Button.png" id="12_7pgds"]
-[ext_resource type="Texture2D" uid="uid://bovxs2vdl420u" path="res://Assets/Menu Buttons/Square Buttons/Square Buttons/Audio Square Button.png" id="13_cg3tf"]
-[ext_resource type="Texture2D" uid="uid://b2iwh72r83flu" path="res://Assets/Menu Buttons/Square Buttons/Colored Square Buttons/Back col_Square Button.png" id="14_31uyk"]
-[ext_resource type="Texture2D" uid="uid://cibccepgtvtgd" path="res://Assets/Menu Buttons/Square Buttons/Square Buttons/Back Square Button.png" id="15_ra4ye"]
+[ext_resource type="FontFile" uid="uid://c8djud1br7gjv" path="res://Assets/font.ttf" id="2_u3gon"]
+[ext_resource type="Texture2D" uid="uid://crx6apunchcpk" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Start Button.png" id="3_eujsq"]
+[ext_resource type="Texture2D" uid="uid://bhvtvifexw24b" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Options  col_Button.png" id="4_cfr0f"]
+[ext_resource type="Texture2D" uid="uid://8dtnlnbfuu50" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Options Button.png" id="5_5v5nv"]
+[ext_resource type="Texture2D" uid="uid://d3ggwkijjtnus" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Controls  col_Button.png" id="6_rbvcd"]
+[ext_resource type="Texture2D" uid="uid://bb2esnmprbhec" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Controls Button.png" id="7_a10mp"]
+[ext_resource type="Texture2D" uid="uid://bbkiep1eg5amm" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Quit  col_Button.png" id="8_v05ku"]
+[ext_resource type="Texture2D" uid="uid://dxhwwxdeabajw" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Quit Button.png" id="9_8fewq"]
+[ext_resource type="Texture2D" uid="uid://bubgnsnrpr5fx" path="res://Assets/Menu Buttons/Square Buttons/Colored Square Buttons/Audio col_Square Button.png" id="11_0jpmn"]
+[ext_resource type="Texture2D" uid="uid://bovxs2vdl420u" path="res://Assets/Menu Buttons/Square Buttons/Square Buttons/Audio Square Button.png" id="12_p4bv4"]
+[ext_resource type="Texture2D" uid="uid://b2iwh72r83flu" path="res://Assets/Menu Buttons/Square Buttons/Colored Square Buttons/Back col_Square Button.png" id="13_31uyk"]
+[ext_resource type="Texture2D" uid="uid://cibccepgtvtgd" path="res://Assets/Menu Buttons/Square Buttons/Square Buttons/Back Square Button.png" id="14_ra4ye"]
+
+[sub_resource type="Animation" id="Animation_kf0ai"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_3bfla"]
 resource_name = "label_animation"
@@ -54,7 +57,7 @@ offset_bottom = 218.0
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
 theme_override_colors/font_shadow_color = Color(0.661165, 0.243523, 0.199809, 1)
-theme_override_fonts/font = ExtResource("3_talgo")
+theme_override_fonts/font = ExtResource("2_u3gon")
 theme_override_font_sizes/font_size = 60
 text = "Huanting Truths"
 
@@ -75,8 +78,8 @@ offset_bottom = 487.0
 scale = Vector2(0.2, 0.2)
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Options")
-texture_normal = ExtResource("4_wiimi")
-texture_hover = ExtResource("5_rfnky")
+texture_normal = ExtResource("2_8w0md")
+texture_hover = ExtResource("3_eujsq")
 
 [node name="Options" type="TextureButton" parent="Buttons"]
 offset_left = 496.0
@@ -86,8 +89,8 @@ offset_bottom = 545.0
 scale = Vector2(0.2, 0.2)
 focus_neighbor_top = NodePath("../Start")
 focus_neighbor_bottom = NodePath("../Quit")
-texture_normal = ExtResource("6_j85cx")
-texture_hover = ExtResource("7_8fewq")
+texture_normal = ExtResource("4_cfr0f")
+texture_hover = ExtResource("5_5v5nv")
 
 [node name="Controls" type="TextureButton" parent="Buttons"]
 offset_left = 497.0
@@ -95,8 +98,8 @@ offset_top = 400.0
 offset_right = 1097.0
 offset_bottom = 600.0
 scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("8_rbvcd")
-texture_hover = ExtResource("9_a10mp")
+texture_normal = ExtResource("6_rbvcd")
+texture_hover = ExtResource("7_a10mp")
 
 [node name="Quit" type="TextureButton" parent="Buttons"]
 offset_left = 498.0
@@ -106,8 +109,8 @@ offset_bottom = 658.0
 scale = Vector2(0.2, 0.2)
 focus_neighbor_top = NodePath("../Options")
 focus_neighbor_bottom = NodePath("../Start")
-texture_normal = ExtResource("10_v05ku")
-texture_hover = ExtResource("11_8fewq")
+texture_normal = ExtResource("8_v05ku")
+texture_hover = ExtResource("9_8fewq")
 
 [node name="Volume" type="TextureButton" parent="Buttons"]
 offset_left = 1050.0
@@ -115,8 +118,8 @@ offset_top = 26.0
 offset_right = 1250.0
 offset_bottom = 226.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("12_7pgds")
-texture_hover = ExtResource("13_cg3tf")
+texture_normal = ExtResource("11_0jpmn")
+texture_hover = ExtResource("12_p4bv4")
 
 [node name="Back" type="TextureButton" parent="Buttons"]
 offset_left = 27.0
@@ -124,8 +127,8 @@ offset_top = 21.0
 offset_right = 227.0
 offset_bottom = 221.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("14_31uyk")
-texture_hover = ExtResource("15_ra4ye")
+texture_normal = ExtResource("13_31uyk")
+texture_hover = ExtResource("14_ra4ye")
 
 [node name="VolumeSlider" type="VSlider" parent="."]
 offset_left = 1090.0
