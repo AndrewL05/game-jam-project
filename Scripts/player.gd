@@ -13,7 +13,7 @@ func _ready():
 	ORIGINAL_SPEED =SPEED
 	sprint_slider = get_node("/root/" + get_tree().current_scene.name + "/UI/sprint_slider")
 
-func _process(delta: float) -> void:
+func _process(delta):
 	if SPEED == SPRINT_SPEED:
 		sprint_slider.value = sprint_slider.value - sprint_drain_amount * delta 
 		if sprint_slider.value == sprint_slider.min_value:
