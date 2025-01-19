@@ -1,7 +1,8 @@
-[gd_scene load_steps=136 format=4 uid="uid://dxl8msxys6a8i"]
+[gd_scene load_steps=137 format=4 uid="uid://dxl8msxys6a8i"]
 
-[ext_resource type="PackedScene" uid="uid://dcyjm8b5xly53" path="res://Scenes/Player.tscn" id="1_m7l37"]
+[ext_resource type="PackedScene" uid="uid://dcyjm8b5xly53" path="res://Scenes/player.tscn" id="1_m7l37"]
 [ext_resource type="Script" path="res://Scripts/detective_office.gd" id="1_x7als"]
+[ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="2_x073b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b08k8"]
 resource_name = "Office_Sh"
@@ -1540,6 +1541,8 @@ data = PackedVector3Array(6.4, -2.5, 0, -6.4, -2.5, 0, 6.4, 2.5, 0, -6.4, -2.5, 
 
 [node name="Detecitive Office" type="Node3D"]
 script = ExtResource("1_x7als")
+
+[node name="UI" parent="." instance=ExtResource("2_x073b")]
 
 [node name="Player" parent="." instance=ExtResource("1_m7l37")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6637, 1.1827, 3.83562)
