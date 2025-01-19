@@ -1,28 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://djvulatl0va51"]
+[gd_scene load_steps=10 format=3 uid="uid://degqms6voy565"]
 
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_vdrfw"]
-[ext_resource type="Material" uid="uid://b238s8qf52pc8" path="res://Materials/brown.tres" id="2_dj3t5"]
+[ext_resource type="Material" path="res://Materials/brown.tres" id="2_dj3t5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jm7a"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jmxsm"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_7madf"]
-
-[sub_resource type="Animation" id="Animation_i4vmj"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hinge:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_474o7"]
 length = 0.001
@@ -52,6 +37,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i4vmj"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o14w3"]

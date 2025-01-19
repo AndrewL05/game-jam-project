@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://eorjc6joe26h"]
+
+[ext_resource type="Texture2D" uid="uid://c78y0n35obhbe" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Resume  col_Button.png" id="1_1n5qp"]
+[ext_resource type="Texture2D" uid="uid://dmcwc7q4aik88" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Resume Button.png" id="2_cqb7s"]
+[ext_resource type="Texture2D" uid="uid://bwwv6jwbd3pgm" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Settings  col_Button.png" id="3_pxuo1"]
+[ext_resource type="Texture2D" uid="uid://d4gx47x7vmc0g" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Settings Button.png" id="4_rrkxs"]
+[ext_resource type="Texture2D" uid="uid://c6bwl43i43vlp" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/New Game  col_Button.png" id="5_lkt4n"]
+[ext_resource type="Texture2D" uid="uid://deq5gyxi8vxvo" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/New game Button.png" id="6_1opnk"]
+[ext_resource type="Texture2D" uid="uid://dm2biqnu50hkd" path="res://Assets/Menu Buttons/Large Buttons/Colored Large Buttons/Quit  col_Button.png" id="7_jsvxj"]
+[ext_resource type="Texture2D" uid="uid://b1ly5d46nlgq0" path="res://Assets/Menu Buttons/Large Buttons/Large Buttons/Quit Button.png" id="8_wxc6w"]
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Resume" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 131.0
+offset_right = 1043.0
+offset_bottom = 331.0
+scale = Vector2(0.4, 0.403)
+texture_normal = ExtResource("1_1n5qp")
+texture_hover = ExtResource("2_cqb7s")
+
+[node name="Settings" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 245.0
+offset_right = 1042.0
+offset_bottom = 445.0
+scale = Vector2(0.4, 0.403)
+texture_normal = ExtResource("3_pxuo1")
+texture_hover = ExtResource("4_rrkxs")
+
+[node name="NewGame" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 355.0
+offset_right = 1043.0
+offset_bottom = 555.0
+scale = Vector2(0.4, 0.403)
+texture_normal = ExtResource("5_lkt4n")
+texture_hover = ExtResource("6_1opnk")
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 468.0
+offset_right = 1046.0
+offset_bottom = 668.0
+scale = Vector2(0.4, 0.403)
+texture_normal = ExtResource("7_jsvxj")
+texture_hover = ExtResource("8_wxc6w")
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
