@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://boyecd4lj614f"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_nr80y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlisj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_funwr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xuvy5"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_nr80y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 242.0
+offset_top = 190.0
+offset_right = 375.0
+offset_bottom = 267.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Setting")
+theme_override_colors/font_color = Color(0.917066, 0.239915, 0.190442, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wlisj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_funwr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xuvy5")
+text = "Play"
+
+[node name="Setting" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Quit")
+theme_override_colors/font_color = Color(0.917066, 0.239915, 0.190442, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wlisj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_funwr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xuvy5")
+text = "Settings
+"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Setting")
+focus_neighbor_bottom = NodePath("../Play")
+theme_override_colors/font_color = Color(0.917066, 0.239915, 0.190442, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wlisj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_funwr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xuvy5")
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
