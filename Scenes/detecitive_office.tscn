@@ -1339,7 +1339,6 @@ shadow_mesh = SubResource("ArrayMesh_wb8w7")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2qxh"]
 resource_name = "light"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1414,7 +1413,6 @@ emission_energy_multiplier = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6xr"]
 resource_name = "Material #38"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission_energy_multiplier = 0.0
 
@@ -1884,12 +1882,8 @@ mesh = SubResource("PlaneMesh_whufh")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00407028, -0.0210915, 0.0238876)
 shape = SubResource("BoxShape3D_sgr6m")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999507, 0, -0.0314108, 0, 1, 0, 0.0314108, 0, 0.999507, 0.624586, 2.71544, 3.90309)
-current = true
-fov = 101.055
 
 [node name="Outer_Walls" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.881521, 2.45956, 4.98719)
@@ -1993,3 +1987,6 @@ transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -
 mesh = SubResource("ArrayMesh_o7k64")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_uj6oe")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0136131, 0.999907, 0, -0.999907, 0.0136131, 0, 0, 0, 1, 0, 1.26713, 3.77811)

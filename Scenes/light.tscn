@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlmfdu0o61mkd"]
+
+[ext_resource type="Material" uid="uid://boufln2bgalv6" path="res://Materials/light.tres" id="1_v4lnk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hnqgu"]
+
+[node name="light" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_v4lnk")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_hnqgu")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.761436, 0)
+omni_range = 179.233
