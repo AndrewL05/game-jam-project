@@ -8,6 +8,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  # Ensure mouse is visible in the menu
 	$VolumeSlider.value = -10  # Match this to your default volume level
 	_adjust_volume(-10)  # Set initial volume
+	$Label/AnimationPlayer.play("label_animation")
 	
 func _process(delta: float) -> void:
 	pass
