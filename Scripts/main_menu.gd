@@ -13,13 +13,10 @@ func _process(delta: float) -> void:
 	pass
 	
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/DetectiveOffice.tscn")
-	
-func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/options_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/hospital_scene.tscn")
 	
 func _on_controls_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/controls_menu.tscn")
 	
 func _on_quit_pressed() -> void:
 	get_tree().quit()
@@ -30,9 +27,8 @@ func _on_volume_pressed() -> void:
 func _on_back_pressed() -> void:
 	if get_tree().current_scene.name == "MainMenu":
 		if game_started:
-			get_tree().change_scene_to_file("res://Scenes/DetectiveOffice.tscn") # load continued game scene
+			get_tree().change_scene_to_file("res://Scenes/hospital_scene.tscn") # load continued game scene
 	else:
-		# Otherwise, go back to the main menu
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	
 func _on_v_slider_value_changed(value: float) -> void:
