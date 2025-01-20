@@ -9,6 +9,10 @@ const JUMP_VELOCITY = 4.5
 var sprint_slider
 var movable = false
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause_game"):
+		$PauseMenu.pause()
+
 func _ready():
 	ORIGINAL_SPEED =SPEED
 	sprint_slider = get_node("/root/" + get_tree().current_scene.name + "/UI/sprint_slider")
