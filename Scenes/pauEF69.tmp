@@ -70,9 +70,8 @@ layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 648.0
 
-[node name="Buttons" type="Node2D" parent="."]
-
-[node name="Resume" type="TextureButton" parent="Buttons"]
+[node name="Resume" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 443.0
 offset_top = 131.0
 offset_right = 1043.0
@@ -81,7 +80,8 @@ scale = Vector2(0.4, 0.403)
 texture_normal = ExtResource("2_ebwye")
 texture_hover = ExtResource("3_xo58x")
 
-[node name="Settings" type="TextureButton" parent="Buttons"]
+[node name="Settings" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 442.0
 offset_top = 245.0
 offset_right = 1042.0
@@ -90,7 +90,8 @@ scale = Vector2(0.4, 0.403)
 texture_normal = ExtResource("4_jby30")
 texture_hover = ExtResource("5_1svfj")
 
-[node name="NewGame" type="TextureButton" parent="Buttons"]
+[node name="NewGame" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 443.0
 offset_top = 355.0
 offset_right = 1043.0
@@ -99,7 +100,8 @@ scale = Vector2(0.4, 0.403)
 texture_normal = ExtResource("6_47ep0")
 texture_hover = ExtResource("7_r3x8m")
 
-[node name="Quit" type="TextureButton" parent="Buttons"]
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 446.0
 offset_top = 468.0
 offset_right = 1046.0
@@ -113,7 +115,7 @@ libraries = {
 "": SubResource("AnimationLibrary_64121")
 }
 
-[connection signal="pressed" from="Buttons/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Buttons/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

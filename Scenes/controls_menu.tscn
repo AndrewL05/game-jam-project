@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfdgu1h5evl7e"]
+
+[ext_resource type="Script" path="res://Scripts/controls_menu.gd" id="1_jqjma"]
+[ext_resource type="Texture2D" uid="uid://dbnk43iixgnf5" path="res://Assets/background.jpg" id="2_e1ykg"]
+[ext_resource type="FontFile" uid="uid://d2du2r314dh7g" path="res://Assets/font.ttf" id="3_iwvpu"]
+[ext_resource type="Texture2D" uid="uid://b5pkcn2bfq7o3" path="res://Assets/Menu Buttons/Square Buttons/Colored Square Buttons/Back col_Square Button.png" id="14_2r1n6"]
+[ext_resource type="Texture2D" uid="uid://dlm84tn8akv4w" path="res://Assets/Menu Buttons/Square Buttons/Square Buttons/Back Square Button.png" id="15_1c0ew"]
+
+[sub_resource type="Animation" id="Animation_kf0ai"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.125911, 0.125911, 0.125911, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3bfla"]
+resource_name = "label_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.133198, 0.133196, 0.133196, 1), Color(0.991164, 0.991164, 0.991164, 1), Color(0.021435, 0.0214345, 0.0214346, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4nqyq"]
+_data = {
+"RESET": SubResource("Animation_kf0ai"),
+"label_animation": SubResource("Animation_3bfla")
+}
+
+[node name="Controls" type="Node2D"]
+script = ExtResource("1_jqjma")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 324)
+scale = Vector2(1.8, 1.799)
+texture = ExtResource("2_e1ykg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 293.0
+offset_top = 149.0
+offset_right = 841.0
+offset_bottom = 218.0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_colors/font_shadow_color = Color(0.661165, 0.243523, 0.199809, 1)
+theme_override_fonts/font = ExtResource("3_iwvpu")
+theme_override_font_sizes/font_size = 60
+text = "Controls "
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+"": SubResource("AnimationLibrary_4nqyq")
+}
+autoplay = "label_animation"
+speed_scale = 0.4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 384.0
+offset_top = 285.0
+offset_right = 561.0
+offset_bottom = 360.0
+scale = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_fonts/font = ExtResource("3_iwvpu")
+text = "- Move: W/A/S/D
+- Jump: Spacebar
+- Pause: Escape (ESC)
+"
+horizontal_alignment = 1
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="Buttons"]
+offset_left = 27.0
+offset_top = 21.0
+offset_right = 227.0
+offset_bottom = 221.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("14_2r1n6")
+texture_hover = ExtResource("15_1c0ew")
+
+[connection signal="pressed" from="Buttons/TextureButton" to="." method="_on_texture_button_pressed"]

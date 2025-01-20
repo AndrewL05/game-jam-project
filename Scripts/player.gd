@@ -24,8 +24,6 @@ func _process(delta):
 		if sprint_slider.value == sprint_slider.max_value:
 			sprint_slider.visible = false
 
-
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
