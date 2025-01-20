@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq4l56di2jyjs"]
+
+[ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="1_l8rjq"]
+[ext_resource type="Script" path="res://Scenes/house_scene.gd" id="1_wthe5"]
+[ext_resource type="PackedScene" uid="uid://dcyjm8b5xly53" path="res://Scenes/player.tscn" id="2_pbt32"]
+[ext_resource type="PackedScene" uid="uid://b1ettucntl4x3" path="res://Scenes/abandoned_house.tscn" id="4_ev3hu"]
+
+[node name="house_scene" type="Node3D"]
+script = ExtResource("1_wthe5")
+
+[node name="UI" parent="." instance=ExtResource("1_l8rjq")]
+
+[node name="Player" parent="." instance=ExtResource("2_pbt32")]
+transform = Transform3D(0.5, 0, 0, 0, 0.7, 0, 0, 0, 0.5, -37.8617, 1.11313, -124.184)
+
+[node name="Abandoned_House" parent="." instance=ExtResource("4_ev3hu")]

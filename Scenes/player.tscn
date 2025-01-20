@@ -6,9 +6,10 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7q6t7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_epxs2"]
-radial_segments = 16
+radial_segments = 25
 
 [node name="Player" type="CharacterBody3D"]
+physics_interpolation_mode = 1
 script = ExtResource("1_db6gr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
