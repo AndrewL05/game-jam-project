@@ -440,5 +440,6 @@ libraries = {
 }
 
 [node name="UI" parent="." instance=ExtResource("25_02pdr")]
+anchors_preset = -1
 size_flags_horizontal = 3
 size_flags_vertical = 8
