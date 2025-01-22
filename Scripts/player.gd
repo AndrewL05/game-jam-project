@@ -14,7 +14,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		$PauseMenu.pause()
 
 func _ready():
-	sprint_slider
 	ORIGINAL_SPEED =SPEED
 	sprint_slider = get_node("/root/" + get_tree().current_scene.name + "/UI/sprint_slider")
 
