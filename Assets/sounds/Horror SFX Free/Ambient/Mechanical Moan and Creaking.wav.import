@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cndogvmttqbav"
+path="res://.godot/imported/Mechanical Moan and Creaking.wav-447608fa01de9f71299e0d9e3d9a1f5d.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Horror SFX Free/Ambient/Mechanical Moan and Creaking.wav"
+dest_files=["res://.godot/imported/Mechanical Moan and Creaking.wav-447608fa01de9f71299e0d9e3d9a1f5d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

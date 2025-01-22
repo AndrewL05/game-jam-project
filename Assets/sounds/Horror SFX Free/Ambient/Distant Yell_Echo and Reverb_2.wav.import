@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dh60wa1shm5jo"
+path="res://.godot/imported/Distant Yell_Echo and Reverb_2.wav-c158828b87d48f0d4eaca834570073d3.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Horror SFX Free/Ambient/Distant Yell_Echo and Reverb_2.wav"
+dest_files=["res://.godot/imported/Distant Yell_Echo and Reverb_2.wav-c158828b87d48f0d4eaca834570073d3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

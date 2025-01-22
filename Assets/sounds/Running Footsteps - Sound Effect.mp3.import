@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bl0w1p0mf83yd"
+path="res://.godot/imported/Running Footsteps - Sound Effect.mp3-6573ee0d870117c6da3a3f45f390536a.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/Running Footsteps - Sound Effect.mp3"
+dest_files=["res://.godot/imported/Running Footsteps - Sound Effect.mp3-6573ee0d870117c6da3a3f45f390536a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

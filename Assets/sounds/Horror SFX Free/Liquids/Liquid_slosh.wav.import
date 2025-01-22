@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dem4xyelllkg6"
+path="res://.godot/imported/Liquid_slosh.wav-e3ddbf0f456e721a1abf7c309ae71122.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Horror SFX Free/Liquids/Liquid_slosh.wav"
+dest_files=["res://.godot/imported/Liquid_slosh.wav-e3ddbf0f456e721a1abf7c309ae71122.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

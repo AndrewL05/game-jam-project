@@ -14,10 +14,30 @@ func _unhandled_input(event: InputEvent) -> void:
 		$PauseMenu.pause()
 
 func _ready():
+	sprint_slider
 	ORIGINAL_SPEED =SPEED
 	sprint_slider = get_node("/root/" + get_tree().current_scene.name + "/UI/sprint_slider")
 
 func _process(delta):
+	
+	if Input.is_action_just_pressed("foward") or \
+	   Input.is_action_just_pressed("backward") or \
+	   Input.is_action_just_pressed("right") or \
+	   Input.is_action_just_pressed("left"):
+		$head/Camera3D/step.play()
+	if Input.is_action_just_released("foward") or Input.is_action_just_pressed("sprint") or \
+	   Input.is_action_just_released("backward") or Input.is_action_just_pressed("sprint") or \
+	   Input.is_action_just_released("right") or Input.is_action_just_pressed("sprint") or \
+	   Input.is_action_just_released("left") or Input.is_action_just_pressed("sprint"):
+		$head/Camera3D/step.stop()
+	if Input.is_action_just_pressed("sprint"):
+		$head/Camera3D/running.play()
+	if Input.is_action_just_released("sprint"):
+		$head/Camera3D/running.stop()
+		
+	
+	
+		
 	if SPEED == SPRINT_SPEED:
 		sprint_slider.value = sprint_slider.value - sprint_drain_amount * delta 
 		if sprint_slider.value == sprint_slider.min_value:

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bx40cfcfrwj5d"
+path="res://.godot/imported/Spray.wav-83b8da451b1d8e4f6cd89234c7d82fae.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Horror SFX Free/Liquids/Spray.wav"
+dest_files=["res://.godot/imported/Spray.wav-83b8da451b1d8e4f6cd89234c7d82fae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

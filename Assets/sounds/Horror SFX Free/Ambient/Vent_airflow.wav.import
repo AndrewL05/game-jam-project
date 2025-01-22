@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buct4opebd7vk"
+path="res://.godot/imported/Vent_airflow.wav-ca5b54d830f6c4a091b64e6518564a8b.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Horror SFX Free/Ambient/Vent_airflow.wav"
+dest_files=["res://.godot/imported/Vent_airflow.wav-ca5b54d830f6c4a091b64e6518564a8b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
