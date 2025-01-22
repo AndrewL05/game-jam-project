@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvg62xpub5tjj"
+path="res://.godot/imported/Creepy Little Girl Crying and Weeping Sound Effect  Free Horror Sounds.mp3-ed8e4682b404ef41af88a4b2f1896cc8.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/Creepy Little Girl Crying and Weeping Sound Effect  Free Horror Sounds.mp3"
+dest_files=["res://.godot/imported/Creepy Little Girl Crying and Weeping Sound Effect  Free Horror Sounds.mp3-ed8e4682b404ef41af88a4b2f1896cc8.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8bvbmyn4oa50"
+path="res://.godot/imported/Door_knocking_quiet.wav-c407abee8bb077db7738a8dd63c43287.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/Horror SFX Free/House & Office/Door_knocking_quiet.wav"
+dest_files=["res://.godot/imported/Door_knocking_quiet.wav-c407abee8bb077db7738a8dd63c43287.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
