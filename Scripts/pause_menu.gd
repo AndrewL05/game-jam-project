@@ -5,6 +5,7 @@ extends ColorRect
 @onready var quit_button: Button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Quit
 
 func _ready():
+	resume_button.grab_focus();
 	resume_button.pressed.connect(unpause)
 	quit_button.pressed.connect(get_tree().quit)
 
