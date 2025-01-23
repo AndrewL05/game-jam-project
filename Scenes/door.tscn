@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://degqms6voy565"]
+[gd_scene load_steps=12 format=3 uid="uid://degqms6voy565"]
 
+[ext_resource type="Script" path="res://Scripts/door_parent.gd" id="1_nnn0y"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_vdrfw"]
 [ext_resource type="Material" uid="uid://b238s8qf52pc8" path="res://Materials/brown.tres" id="2_dj3t5"]
 
@@ -54,14 +55,32 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_haqvi"]
+resource_name = "locked"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.0349066, 0), Vector3(0, 0.0349066, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o14w3"]
 _data = {
 "RESET": SubResource("Animation_474o7"),
 "close": SubResource("Animation_uwpm3"),
+"locked": SubResource("Animation_haqvi"),
 "open": SubResource("Animation_i4vmj")
 }
 
 [node name="Door" type="Node3D"]
+script = ExtResource("1_nnn0y")
 
 [node name="Hinge" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.425312, 0, 0)

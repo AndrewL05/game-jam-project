@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cq4l56di2jyjs"]
+[gd_scene load_steps=21 format=3 uid="uid://cq4l56di2jyjs"]
 
 [ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="1_l8rjq"]
 [ext_resource type="Script" path="res://Scripts/house_scene.gd" id="1_wthe5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dj4eputvsiokl" path="res://Assets/runningGirl/lethal_company_ghost_girl_rig.glb" id="6_ymuls"]
 [ext_resource type="AudioStream" uid="uid://bvg62xpub5tjj" path="res://Assets/sounds/Creepy Little Girl Crying and Weeping Sound Effect  Free Horror Sounds.mp3" id="7_fpk4a"]
 [ext_resource type="AudioStream" uid="uid://mf0giuj3sd2n" path="res://Assets/sounds/Horror SFX Free/Eerie Ambient Sound Effect.mp3" id="8_14s83"]
+[ext_resource type="PackedScene" uid="uid://degqms6voy565" path="res://Scenes/door.tscn" id="10_aqiwa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vdebw"]
 size = Vector3(1.45447, 0.834718, 0.632431)
@@ -1593,6 +1594,10 @@ volume_db = -20.0
 pitch_scale = 0.9
 autoplay = true
 max_distance = 50.0
+
+[node name="Door" parent="." instance=ExtResource("10_aqiwa")]
+transform = Transform3D(0.9, 0, 0, 0, 1, 0, 0, 0, 0.3, -28.4678, 0.928629, -118.024)
+key = "12092"
 
 [connection signal="body_entered" from="scare_trigger" to="scare_trigger" method="trigger_entered"]
 [connection signal="body_entered" from="scare_trigger2" to="scare_trigger2" method="trigger_entered"]
