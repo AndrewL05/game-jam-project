@@ -85,8 +85,10 @@ theme_override_colors/font_shadow_color = Color(0.212305, 0.212305, 0.212305, 1)
 theme_override_fonts/font = ExtResource("3_iwvpu")
 text = "- Move: W/A/S/D
 - Jump: Spacebar
--Sprint: Shift
+- Sprint: Shift
+- Interact: Enter
 - Pause: Escape (ESC)
+
 "
 horizontal_alignment = 1
 

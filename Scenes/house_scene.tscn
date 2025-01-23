@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://cq4l56di2jyjs"]
 
 [ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="1_l8rjq"]
-[ext_resource type="Script" path="res://Scenes/house_scene.gd" id="1_wthe5"]
+[ext_resource type="Script" path="res://Scripts/house_scene.gd" id="1_wthe5"]
 [ext_resource type="PackedScene" uid="uid://dcyjm8b5xly53" path="res://Scenes/player.tscn" id="2_pbt32"]
 [ext_resource type="PackedScene" uid="uid://b1ettucntl4x3" path="res://Scenes/abandoned_house.tscn" id="4_ev3hu"]
 [ext_resource type="Script" path="res://Scripts/scare_trigger.gd" id="5_il3vb"]
@@ -1496,6 +1496,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_nubn8"]
 
 [node name="house_scene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98.2654)
 script = ExtResource("1_wthe5")
 
 [node name="UI" parent="." instance=ExtResource("1_l8rjq")]

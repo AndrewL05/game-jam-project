@@ -8,10 +8,20 @@ var SPRINT_SPEED = 7.0
 const JUMP_VELOCITY = 4.5
 var sprint_slider
 var movable = false
+@onready var actionable_finder : Area3D = $InteractableArea
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause_game"):
 		$PauseMenu.pause()
+		return 
+		
+	if event.is_action_pressed("skip"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return 
+		DialogueManager.show_example_dialogue_balloon(load("res://dialouge/main.dialogue"), "start")
+		return
 
 func _ready():
 	ORIGINAL_SPEED =SPEED
