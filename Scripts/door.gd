@@ -3,9 +3,11 @@ extends StaticBody3D
 var interactable : bool = true
 var toggle : bool = false
 @export var animation_player: AnimationPlayer
-@onready var ui_node: Control = get_tree().current_scene.get_node("Door/Hinge/StaticBody3D/DoorUI")  
+@onready var ui_node: Control = get_tree().current_scene.get_node("Door/Hinge/StaticBody3D/DoorUI")
+var token = 0  
 
 func interact():
+		
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_node("/root/"+ get_tree().current_scene.name + "/Player").movable = false
 	get_node("/root/"+ get_tree().current_scene.name + "/Player/head").movable = false 
@@ -26,7 +28,13 @@ func interact():
 			func():
 				get_tree().change_scene_to_file("res://Scenes/house_scene.tscn")
 		)
-	
+	elif get_tree().get_current_scene().name == "house_scene" && token ==0:
+		ui_node.visible = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		_toggle_door("open")
+		token += 1
+		await get_tree().create_timer(3.0,false).timeout
+		_toggle_door("close")
 func _show_code_input():
 	# Display the UI for entering the code
 	ui_node.visible = true
