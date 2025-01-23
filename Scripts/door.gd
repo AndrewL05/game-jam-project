@@ -50,6 +50,7 @@ func _on_code_submitted():
 			#print (get_tree().current_scene.name)
 			await get_tree().create_timer(1.0,false).timeout
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 	else:
 		_toggle_door("locked")
 
