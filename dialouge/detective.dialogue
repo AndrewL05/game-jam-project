@@ -2,8 +2,24 @@
 
 Detective: How are you feeling now?
 You: I am feeling better.
-Detective: We just got a new case about a 13 year old girl who has been recently murdered.
-	
-	
-	
+Detective: We just got a new case about a 13-year-old girl who has been recently murdered.
+You: Murdered? That’s terrible.
+Detective: Yes, and the circumstances are quite unusual. The crime scene was staged to look like an accident.
+You: Staged? Do we have any leads?
+Detective: A few. Her neighbors reported seeing a shadowy figure near their home several nights in a row.
+You: Did anyone else see this figure?
+Detective: Not that we know of. But her neighbor mentioned seeing a suspicious car parked outside their house the night she disappeared.
+You: Do we have a description of the car?
+Detective: Black sedan. License plates were partially visible, but we’re working on tracking it.
+You: Where do we start?
+Detective: The crime scene. It’s still fresh, but we need to move quickly before we lose the trail. Can I count on you to assist me?
+You: Of course. 
+Detective: I can’t come with you right now. I need to meet with the forensics team first and coordinate some details on another case.
+You: You want me to go alone?
+Detective: Yes. I trust your instincts. You’ve worked enough cases to know what to look for.
+You: Alright. Where’s the crime scene?
+Detective: It’s at the girl’s house. 132 Elmo Street. 
+You: Got it. I’ll take a look and report back.
+Detective: Be careful. The area is quiet, but keep an eye out for anything unusual. I’ll meet you there as soon as I’m done.
+
 => END

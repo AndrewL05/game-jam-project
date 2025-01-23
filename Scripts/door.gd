@@ -1,9 +1,9 @@
 extends StaticBody3D
 
-var interactable = true
-var toggle = false
+var interactable : bool = true
+var toggle : bool = false
 @export var animation_player: AnimationPlayer
-@onready var ui_node: Control = get_tree().current_scene.get_node("Door/Hinge/StaticBody3D/DoorUI")  # Renamed node
+@onready var ui_node: Control = get_tree().current_scene.get_node("Door/Hinge/StaticBody3D/DoorUI")  
 
 func interact():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -12,13 +12,21 @@ func interact():
 	if interactable:
 		interactable = false
 		_show_code_input()
-	if get_tree().current_scene.name == "Hospital_Scene": 
-		ui_node.visible = false
+	if get_tree().get_current_scene().name == "Hospital_Scene":
 		_toggle_door("open")
-		await get_tree().create_timer(1.0,false).timeout
-		get_tree().change_scene_to_file("res://Scenes/DetectiveOffice.tscn")
-
-
+		ui_node.visible = false
+		get_tree().create_timer(1.0, false).timeout.connect(
+			func():
+				get_tree().change_scene_to_file("res://Scenes/DetectiveOffice.tscn")
+		)
+	elif get_tree().get_current_scene().name == "Detective Office":
+		_toggle_door("open")
+		ui_node.visible = false
+		get_tree().create_timer(1.0, false).timeout.connect(
+			func():
+				get_tree().change_scene_to_file("res://Scenes/house_scene.tscn")
+		)
+	
 func _show_code_input():
 	# Display the UI for entering the code
 	ui_node.visible = true
@@ -35,21 +43,19 @@ func _on_code_submitted():
 	ui_node.visible = false
 	ui_node.get_node("SubmitButton").disconnect("pressed", Callable(self, "_on_code_submitted"))
 	var allowedCode = ["1253", "3113", "1332"];
-	
-	if user_code in allowedCode:
-		_toggle_door("open")
-		print (get_tree().current_scene.name)
-		await get_tree().create_timer(1.0,false).timeout
-		
-		if get_tree().current_scene.name == "Detecitive Office":  
-			get_tree().change_scene_to_file("res://Scenes/house_scene.tscn")
-		
+
+	if user_code == "1253" or "3113" or "1332":
+		if user_code in allowedCode:
+			_toggle_door("open")
+			#print (get_tree().current_scene.name)
+			await get_tree().create_timer(1.0,false).timeout
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 	else:
 		_toggle_door("locked")
-	
+
 	interactable = true
-
-
+	
 func _toggle_door(state: String):
 	if state == "open":
 		if not toggle:

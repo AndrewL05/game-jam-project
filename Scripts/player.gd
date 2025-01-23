@@ -43,10 +43,8 @@ func _process(delta):
 		$head/Camera3D/running.play()
 	if Input.is_action_just_released("sprint"):
 		$head/Camera3D/running.stop()
-		
-	
-	
-		
+
+
 	if SPEED == SPRINT_SPEED:
 		sprint_slider.value = sprint_slider.value - sprint_drain_amount * delta 
 		if sprint_slider.value == sprint_slider.min_value:
