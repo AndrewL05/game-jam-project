@@ -1,13 +1,14 @@
-[gd_scene load_steps=135 format=4 uid="uid://dxl8msxys6a8i"]
+[gd_scene load_steps=150 format=4 uid="uid://dxl8msxys6a8i"]
 
 [ext_resource type="PackedScene" uid="uid://dcyjm8b5xly53" path="res://Scenes/player.tscn" id="1_m7l37"]
 [ext_resource type="Script" path="res://Scripts/detective_office.gd" id="1_x7als"]
 [ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="2_x073b"]
+[ext_resource type="Material" uid="uid://boufln2bgalv6" path="res://Materials/light.tres" id="4_j4ukf"]
+[ext_resource type="PackedScene" uid="uid://degqms6voy565" path="res://Scenes/door.tscn" id="4_pyu85"]
 [ext_resource type="PackedScene" uid="uid://ccori7ysnlf2n" path="res://Scenes/detective.tscn" id="4_tgla4"]
 [ext_resource type="Script" path="res://Scripts/detective.gd" id="5_4kvmh"]
 [ext_resource type="PackedScene" uid="uid://b4i7l2fa6ms6c" path="res://Scenes/actionable.tscn" id="5_ianb5"]
 [ext_resource type="Resource" uid="uid://c7cps6trc0me" path="res://dialouge/detective.dialogue" id="6_s4lj2"]
-[ext_resource type="PackedScene" uid="uid://degqms6voy565" path="res://Scenes/door.tscn" id="4_pyu85"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b08k8"]
 resource_name = "Office_Sh"
@@ -692,6 +693,9 @@ shadow_mesh = SubResource("ArrayMesh_1y7wx")
 albedo_color = Color(0.909804, 0.776471, 0.686275, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_whufh"]
+size = Vector2(16, 6)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q7oh7"]
 size = Vector2(16, 6)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kpicc"]
@@ -1465,6 +1469,9 @@ size = Vector2(16, 5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3mfjn"]
 data = PackedVector3Array(8, -2.5, 0, -8, -2.5, 0, 8, 2.5, 0, -8, -2.5, 0, -8, 2.5, 0, 8, 2.5, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vvwd2"]
+size = Vector2(16, 5)
 
 [sub_resource type="QuadMesh" id="QuadMesh_fk75a"]
 size = Vector2(6, 5)
@@ -7249,7 +7256,7 @@ transform = Transform3D(0.714021, 0.666391, -0.214703, 0.159579, 0.143686, 0.976
 shadow_enabled = true
 
 [node name="Wall_Door" type="MeshInstance3D" parent="."]
-transform = Transform3D(-100, 3.89414e-05, -2.84217e-12, 0, 5.96046e-06, 100, 3.89414e-05, 100, -1.19209e-05, -7.79854, 4.76837e-07, 4.91656)
+transform = Transform3D(-193.726, 3.89414e-05, -4.29116e-12, 0, 5.96046e-06, 150.982, 7.54395e-05, 100, -1.79984e-05, -7.79854, 4.76837e-07, 4.91656)
 mesh = SubResource("ArrayMesh_tc2rm")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qrgp6")
@@ -7634,6 +7641,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74591, 0, 1.97011)
 mesh = SubResource("PlaneMesh_whufh")
 skeleton = NodePath("")
 
+[node name="Floor2" type="MeshInstance3D" parent="Room_body"]
+transform = Transform3D(12.9631, 0, 0, 0, 1, 0, 0, 0, 1, -2.74591, 0, 7.99277)
+material_override = ExtResource("4_j4ukf")
+mesh = SubResource("PlaneMesh_q7oh7")
+skeleton = NodePath("")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room_body"]
 shape = SubResource("WorldBoundaryShape3D_kpicc")
 
@@ -7739,7 +7752,7 @@ mesh = SubResource("QuadMesh_58t5o")
 skeleton = NodePath("../..")
 
 [node name="wall_1" type="MeshInstance3D" parent="Outer_Walls/outer_walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.13657, 0.0489221, -3.01202)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.42288, 0, 1, 0, -4.37114e-08, 6.05293, 0.0489221, -3.01202)
 mesh = SubResource("QuadMesh_7oo42")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Outer_Walls/outer_walls/wall_1"]
@@ -7754,6 +7767,25 @@ mesh = SubResource("QuadMesh_68iys")
 [node name="StaticBody3D" type="StaticBody3D" parent="Outer_Walls/outer_walls/wall_2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Outer_Walls/outer_walls/wall_2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3mfjn")
+
+[node name="wall_7" type="MeshInstance3D" parent="Outer_Walls/outer_walls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1.43823, 0, 8.74228e-08, 0, -1, 4.9532, 0.0159419, -0.00539589)
+mesh = SubResource("QuadMesh_68iys")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Outer_Walls/outer_walls/wall_7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Outer_Walls/outer_walls/wall_7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3mfjn")
+
+[node name="wall_6" type="MeshInstance3D" parent="Outer_Walls/outer_walls"]
+transform = Transform3D(-2648.59, 0, -8.7443e-08, 0, 2.65611, 0, 0.000231547, 0, -1.00023, -1.79982, 0.0159419, 3.48968)
+material_override = ExtResource("4_j4ukf")
+mesh = SubResource("QuadMesh_vvwd2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Outer_Walls/outer_walls/wall_6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Outer_Walls/outer_walls/wall_6/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_3mfjn")
 
 [node name="wall_3" type="MeshInstance3D" parent="Outer_Walls/outer_walls"]
@@ -7806,5 +7838,6 @@ dialouge_resource = ExtResource("6_s4lj2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Det/Actionable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900454, 0.983143, 2.00513)
 shape = SubResource("SphereShape3D_oxmau")
+
 [node name="Door" parent="." instance=ExtResource("4_pyu85")]
-transform = Transform3D(0.9, 0, 0, 0, 1, 0, 0, 0, 0.3, -7.78874, 1.13233, 4.92401)
+transform = Transform3D(1.66, 0, 0, 0, 1.66, 0, 0, 0, 1.66, -7.78874, 1.62427, 5.22335)

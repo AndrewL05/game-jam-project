@@ -1596,8 +1596,7 @@ autoplay = true
 max_distance = 50.0
 
 [node name="Door" parent="." instance=ExtResource("10_aqiwa")]
-transform = Transform3D(0.9, 0, 0, 0, 1, 0, 0, 0, 0.3, -28.4678, 0.928629, -118.024)
-key = "12092"
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -28.4932, 0.881369, -118.002)
 
 [connection signal="body_entered" from="scare_trigger" to="scare_trigger" method="trigger_entered"]
 [connection signal="body_entered" from="scare_trigger2" to="scare_trigger2" method="trigger_entered"]

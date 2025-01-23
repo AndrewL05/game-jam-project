@@ -1,22 +1,62 @@
 extends StaticBody3D
 
 var interactable = true
-var opened = false
+var toggle = false
+@export var animation_player: AnimationPlayer
+@onready var ui_node: Control = get_tree().current_scene.get_node("Door/Hinge/StaticBody3D/DoorUI")  # Renamed node
 
 func interact():
-	if get_parent().get_parent().locked == true && get_parent().get_parent().key == null:
-		get_parent().get_parent().locked = false
-	if interactable == true && get_parent().get_parent().locked == false:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_node("/root/"+ get_tree().current_scene.name + "/Player").movable = false
+	get_node("/root/"+ get_tree().current_scene.name + "/Player/head").movable = false 
+	if interactable:
 		interactable = false
-		opened = !opened
-		if opened == false:
-			$AnimationPlayer.play("close")
-		if opened == true:
-			$AnimationPlayer.play("open")
+		_show_code_input()
+	if get_tree().current_scene.name == "Hospital_Scene": 
+		ui_node.visible = false
+		_toggle_door("open")
 		await get_tree().create_timer(1.0,false).timeout
-		interactable = true
-	if interactable == true && get_parent().get_parent().locked == true:
-		interactable = false
-		$AnimationPlayer.play("locked")
-		await get_tree().create_timer(0.7,false).timeout
-		interactable = true
+		get_tree().change_scene_to_file("res://Scenes/DetectiveOffice.tscn")
+
+
+func _show_code_input():
+	# Display the UI for entering the code
+	ui_node.visible = true
+	ui_node.get_node("SubmitButton").connect("pressed", Callable(self, "_on_code_submitted"))
+	ui_node.get_node("CodeInput").grab_focus()
+
+func _on_code_submitted():
+	# Handle code submission
+	var user_code = ui_node.get_node("CodeInput").text
+	ui_node.get_node("CodeInput").text = ""
+	ui_node.visible = false
+	ui_node.get_node("SubmitButton").disconnect("pressed", Callable(self, "_on_code_submitted"))
+	
+	if user_code == "1253" or "3113" or "1332":
+		_toggle_door("open")
+		print (get_tree().current_scene.name)
+		await get_tree().create_timer(1.0,false).timeout
+		
+		if get_tree().current_scene.name == "Detecitive Office":  
+			get_tree().change_scene_to_file("res://Scenes/house_scene.tscn")
+		
+	else:
+		_toggle_door("locked")
+	
+	interactable = true
+
+
+func _toggle_door(state: String):
+	if state == "open":
+		if not toggle:
+			toggle = true
+			animation_player.play("open")
+	elif state == "locked":
+		animation_player.play("locked")
+	else:
+		if toggle:
+			toggle = false
+			animation_player.play("close")
+			
+	get_node("/root/"+ get_tree().current_scene.name + "/Player").movable = true
+	get_node("/root/"+ get_tree().current_scene.name + "/Player/head").movable = true 
