@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dcyjm8b5xly53" path="res://Scenes/player.tscn" id="2_pbt32"]
 [ext_resource type="PackedScene" uid="uid://b1ettucntl4x3" path="res://Scenes/abandoned_house.tscn" id="4_ev3hu"]
 [ext_resource type="Script" path="res://Scripts/scare_trigger.gd" id="5_il3vb"]
-[ext_resource type="Script" path="res://Scenes/scare_trigger_2.gd" id="6_qm3rs"]
+[ext_resource type="Script" path="res://Scripts/scare_trigger_2.gd" id="6_qm3rs"]
 [ext_resource type="PackedScene" uid="uid://dj4eputvsiokl" path="res://Assets/runningGirl/lethal_company_ghost_girl_rig.glb" id="6_ymuls"]
 [ext_resource type="AudioStream" uid="uid://bvg62xpub5tjj" path="res://Assets/sounds/Creepy Little Girl Crying and Weeping Sound Effect  Free Horror Sounds.mp3" id="7_fpk4a"]
 [ext_resource type="AudioStream" uid="uid://mf0giuj3sd2n" path="res://Assets/sounds/Horror SFX Free/Eerie Ambient Sound Effect.mp3" id="8_14s83"]

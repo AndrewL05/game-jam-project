@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jqa0hfwrkdwe"
+uid="uid://cs6di44w1tc45"
 path.s3tc="res://.godot/imported/better_beanie (1)_2.png-c3a08eec73d45c4b95a9718068480755.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "222f08977ca26c6e70b3dc13e516d7c6"
 }
 
 [deps]
