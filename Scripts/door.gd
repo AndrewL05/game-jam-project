@@ -28,11 +28,15 @@ func _show_code_input():
 func _on_code_submitted():
 	# Handle code submission
 	var user_code = ui_node.get_node("CodeInput").text
+	if not user_code: 
+		return
+		
 	ui_node.get_node("CodeInput").text = ""
 	ui_node.visible = false
 	ui_node.get_node("SubmitButton").disconnect("pressed", Callable(self, "_on_code_submitted"))
+	var allowedCode = ["1253", "3113", "1332"];
 	
-	if user_code == "1253" or "3113" or "1332":
+	if user_code in allowedCode:
 		_toggle_door("open")
 		print (get_tree().current_scene.name)
 		await get_tree().create_timer(1.0,false).timeout
