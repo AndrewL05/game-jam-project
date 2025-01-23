@@ -28,6 +28,7 @@ sky_material = SubResource("ProceduralSkyMaterial_wkxff")
 
 [sub_resource type="Environment" id="Environment_e8wfq"]
 background_mode = 2
+background_energy_multiplier = 0.7
 sky = SubResource("Sky_s6xnv")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vdebw"]

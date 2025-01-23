@@ -1327,7 +1327,7 @@ data = PackedVector3Array(-0.3303, -0.3431, -0.0234, 0.3672, -0.3828, -0.0234, 0
 data = PackedVector3Array(-3.819, 0, 3.5092, 3.5901, 0, -3.5093, 3.5901, 0, 3.5092, -3.819, 0, 3.5092, -3.819, 0, -3.5093, 3.5901, 0, -3.5093, 3.5901, 0, 3.5093, 3.819, 0, -3.5093, 3.819, 0, 3.5093, 3.5901, 0, 3.5093, 3.5901, 0, -3.5093, 3.819, 0, -3.5093)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l0h8v"]
-radius = 2.1
+radius = 3.80279
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y6mjf"]
 radius = 2.1
@@ -3314,35 +3314,35 @@ visible = false
 [node name="Reseptor_Señal" parent="." index="33"]
 visible = false
 
-[node name="Shoe" type="RigidBody3D" parent="." index="34"]
+[node name="shoe" parent="." index="34" instance=ExtResource("3_uo4rw")]
+transform = Transform3D(0.0902786, 0, 0, 0, 0.0863338, 0.026395, 0, -0.026395, 0.0863338, -52.638, 4.0389, -121.105)
 
-[node name="shoe" parent="Shoe" index="0" instance=ExtResource("3_uo4rw")]
-transform = Transform3D(0.09, 0, 0, 0, 0.0860674, 0.0263135, 0, -0.0263135, 0.0860674, -52.4756, 4.02644, -120.731)
-
-[node name="Actionable" parent="Shoe" index="1" instance=ExtResource("4_mcbxx")]
+[node name="Actionable" parent="shoe" index="1" instance=ExtResource("4_mcbxx")]
+transform = Transform3D(11.1111, 0, 0, 0, 10.6256, -3.24858, 0, 3.24858, 10.6256, 583.062, -434.988, 1269.76)
 dialouge_resource = ExtResource("5_ljcnk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Shoe/Actionable" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shoe/Actionable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9044, 4.73562, -122.21)
 shape = SubResource("SphereShape3D_l0h8v")
 
-[node name="Axe" type="RigidBody3D" parent="." index="35"]
-
-[node name="axe" parent="Axe" index="0" instance=ExtResource("4_uxt6d")]
+[node name="axe" parent="." index="35" instance=ExtResource("4_uxt6d")]
 transform = Transform3D(0.0152647, -0.0784823, 0.00274066, 0, 0.00279196, 0.0799513, -0.0785302, -0.0152554, 0.000532731, -34.4991, -3.69006, -126.005)
 
-[node name="Actionable" parent="Axe" index="1" instance=ExtResource("4_mcbxx")]
+[node name="Actionable" parent="axe" index="1" instance=ExtResource("4_mcbxx")]
+transform = Transform3D(2.38511, 1.77636e-07, -12.2703, -12.2629, 0.436243, -2.38366, 0.428229, 12.4924, 0.0832391, -1463.84, -721.801, 71.3597)
 dialouge_resource = ExtResource("7_abwhb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Axe/Actionable" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="axe/Actionable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.2425, -2.18297, -126.456)
 shape = SubResource("SphereShape3D_y6mjf")
 
-[node name="Beanie" type="RigidBody3D" parent="." index="36"]
-
-[node name="beanie" parent="Beanie" index="0" instance=ExtResource("5_5nmsu")]
+[node name="beanie" parent="." index="36" instance=ExtResource("5_5nmsu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5852, 4.51558, -130.451)
 
-[node name="Actionable" parent="Beanie" index="1" instance=ExtResource("4_mcbxx")]
+[node name="Actionable" parent="beanie" index="1" instance=ExtResource("4_mcbxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5852, -4.51558, 130.451)
 dialouge_resource = ExtResource("9_5y1qn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Beanie/Actionable" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="beanie/Actionable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4821, 4.64496, -130.491)
 shape = SubResource("SphereShape3D_0kqt0")
