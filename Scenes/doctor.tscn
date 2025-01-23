@@ -326,7 +326,6 @@ albedo_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xculy"]
 resource_name = "Material #4"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(0, 0, 0, 0)
 emission_energy_multiplier = 0.0
@@ -855,7 +854,6 @@ bind/0/pose = Transform3D(1.34309e-06, 0, 1, -1.40269e-06, -1, 1.88394e-12, 1, -
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d115y"]
 resource_name = "Material #3"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 emission = Color(0, 0, 0, 0)
 emission_energy_multiplier = 0.0

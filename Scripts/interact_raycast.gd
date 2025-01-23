@@ -2,7 +2,7 @@ extends RayCast3D
 
 @onready var transition = get_tree().get_first_node_in_group("transitionScenes")
 var int_text
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	if is_colliding(): 
 		var hit = get_collider()
@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 			int_text.visible = false
 	else:
 			int_text.visible = false
-
+	
 	if is_colliding():
 		Global.canInteract = true
 		if Input.is_action_just_released("interact"):
@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 	else:
 		Global.canInteract = false
 	
-
 func _ready() -> void:
 	int_text = get_node("/root/" + get_tree().current_scene.name + "/UI/interact_text")
 	

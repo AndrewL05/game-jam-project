@@ -21,7 +21,7 @@ value = 1.0
 
 [node name="interact_text" type="RichTextLabel" parent="."]
 visible = false
-layout_mode = 0
+layout_mode = 1
 offset_right = 564.0
 offset_bottom = 262.0
 theme_override_font_sizes/normal_font_size = 40
