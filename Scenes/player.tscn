@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcyjm8b5xly53"]
+[gd_scene load_steps=10 format=3 uid="uid://dcyjm8b5xly53"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_db6gr"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="2_fui1d"]
 [ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="3_7d448"]
-[ext_resource type="AudioStream" uid="uid://bl0w1p0mf83yd" path="res://Assets/sounds/Running Footsteps - Sound Effect.mp3" id="4_i7pr4"]
 [ext_resource type="Script" path="res://Scripts/interact_raycast.gd" id="3_t3il7"]
+[ext_resource type="AudioStream" uid="uid://bl0w1p0mf83yd" path="res://Assets/sounds/Running Footsteps - Sound Effect.mp3" id="4_i7pr4"]
 [ext_resource type="PackedScene" uid="uid://belotew036c5n" path="res://Scenes/pause_menu.tscn" id="4_okq70"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7q6t7"]
@@ -42,13 +42,14 @@ pitch_scale = 0.74
 [node name="running" type="AudioStreamPlayer" parent="head/Camera3D"]
 stream = ExtResource("4_i7pr4")
 pitch_scale = 1.22
+
+[node name="InteractRaycast" type="RayCast3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -9.44166e-08, -1, 0, 2.16, -4.37114e-08, 0, 0, 0)
+collision_mask = 3
+script = ExtResource("3_t3il7")
+
 [node name="Flashlight" type="SpotLight3D" parent="head"]
 spot_range = 1.45261
-
-[node name="InteractRaycast" type="RayCast3D" parent="head"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-collision_mask = 2
-script = ExtResource("3_t3il7")
 
 [node name="UI" parent="." instance=ExtResource("3_7d448")]
 offset_right = 1152.0
