@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b2025hrk8tsa6"]
+[gd_scene load_steps=56 format=3 uid="uid://b2025hrk8tsa6"]
 
 [ext_resource type="PackedScene" uid="uid://dcyjm8b5xly53" path="res://Scenes/player.tscn" id="1_1eem4"]
 [ext_resource type="Texture2D" uid="uid://cfipk4c80lg0m" path="res://Materials/textures/Walls_1/Walls_1_Displacement.png" id="1_irfpa"]
@@ -27,6 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="25_02pdr"]
 [ext_resource type="Script" path="res://Scripts/beginning_cutscene.gd" id="26_d3tfw"]
 [ext_resource type="PackedScene" uid="uid://degqms6voy565" path="res://Scenes/door.tscn" id="27_dcrbt"]
+[ext_resource type="Script" path="res://Scripts/docDB.gd" id="28_c16ja"]
+[ext_resource type="PackedScene" uid="uid://cx1rh080j7am6" path="res://Scenes/doctor.tscn" id="28_rf5ff"]
+[ext_resource type="PackedScene" uid="uid://b4i7l2fa6ms6c" path="res://Scenes/actionable.tscn" id="30_luipv"]
+[ext_resource type="Resource" uid="uid://bt8hhl6gx8hof" path="res://dialouge/doc.dialogue" id="31_yogad"]
 
 [sub_resource type="Environment" id="Environment_fo1bc"]
 background_mode = 1
@@ -40,6 +44,11 @@ albedo_texture = ExtResource("1_irfpa")
 [sub_resource type="PlaneMesh" id="PlaneMesh_iubbt"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_r4s6f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k1sj4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ob6hf"]
+albedo_texture = SubResource("CompressedTexture2D_k1sj4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_odk4x"]
 size = Vector2(15, 6)
@@ -138,9 +147,16 @@ _data = {
 "beginning": SubResource("Animation_8i4xx")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_eoxbh"]
+radius = 3.19399
+
 [node name="Hospital_Scene" type="Node3D"]
 
-[node name="Door" parent="." instance=ExtResource("27_dcrbt")]
+[node name="UI" parent="." instance=ExtResource("25_02pdr")]
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Door" parent="." groups=["sceneChange"] instance=ExtResource("27_dcrbt")]
 transform = Transform3D(2.96552, 0, 0, 0, 2.5283, 0, 0, 0, 0.913945, -4.27354, 2.42626, -11.2361)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -175,7 +191,7 @@ shape = SubResource("WorldBoundaryShape3D_r4s6f")
 
 [node name="Floor" type="MeshInstance3D" parent="wall"]
 transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 3.3, 1, 1, 1)
-material_override = ExtResource("3_5co8w")
+material_override = SubResource("StandardMaterial3D_ob6hf")
 mesh = SubResource("PlaneMesh_odk4x")
 skeleton = NodePath("")
 
@@ -439,7 +455,20 @@ libraries = {
 "": SubResource("AnimationLibrary_fr41b")
 }
 
-[node name="UI" parent="." instance=ExtResource("25_02pdr")]
-anchors_preset = -1
-size_flags_horizontal = 3
-size_flags_vertical = 8
+[node name="Doc" type="StaticBody3D" parent="."]
+
+[node name="mesh" type="MeshInstance3D" parent="Doc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12, 0.455028, -5.57531)
+layers = 3
+skeleton = NodePath("../..")
+script = ExtResource("28_c16ja")
+
+[node name="Doctor" parent="Doc/mesh" groups=["dialog"] instance=ExtResource("28_rf5ff")]
+transform = Transform3D(-0.114907, 0, 0.0964184, 0, 0.15, 0, -0.0964184, 0, -0.114907, 0.264284, 3.10782, -20.913)
+
+[node name="Actionable" parent="Doc" instance=ExtResource("30_luipv")]
+dialouge_resource = ExtResource("31_yogad")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doc/Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44182, 2.55191, -28.6297)
+shape = SubResource("SphereShape3D_eoxbh")

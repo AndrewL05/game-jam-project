@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c7cps6trc0me"
+path="res://.godot/imported/detective.dialogue-66e7b9fcf3d8e260fb3737c6e7bbab79.tres"
+
+[deps]
+
+source_file="res://dialouge/detective.dialogue"
+dest_files=["res://.godot/imported/detective.dialogue-66e7b9fcf3d8e260fb3737c6e7bbab79.tres"]
+
+[params]
+
+defaults=true
