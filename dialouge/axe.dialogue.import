@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bnv3lmurx5htf"
+path="res://.godot/imported/axe.dialogue-79135ebfe67c280d245b70b46f30241c.tres"
+
+[deps]
+
+source_file="res://dialouge/axe.dialogue"
+dest_files=["res://.godot/imported/axe.dialogue-79135ebfe67c280d245b70b46f30241c.tres"]
+
+[params]
+
+defaults=true

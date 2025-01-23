@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://yf5gr3gqvr1e"
+path="res://.godot/imported/beanie.dialogue-0682260cca64b8cd27dc5afaae9cc64c.tres"
+
+[deps]
+
+source_file="res://dialouge/beanie.dialogue"
+dest_files=["res://.godot/imported/beanie.dialogue-0682260cca64b8cd27dc5afaae9cc64c.tres"]
+
+[params]
+
+defaults=true

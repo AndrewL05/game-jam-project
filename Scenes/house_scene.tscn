@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cq4l56di2jyjs"]
+[gd_scene load_steps=34 format=3 uid="uid://cq4l56di2jyjs"]
 
 [ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="1_l8rjq"]
 [ext_resource type="Script" path="res://Scripts/house_scene.gd" id="1_wthe5"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://b0qq5ve5khqrd" path="res://Assets/clues/bloody_axe (1).glb" id="11_a2bu4"]
 [ext_resource type="PackedScene" uid="uid://bgywnsiuiew3f" path="res://Assets/clues/better_beanie (1).glb" id="12_y5ffn"]
 [ext_resource type="PackedScene" uid="uid://dblgi6sxdihdo" path="res://Assets/clues/old_converse_shoe (1).glb" id="13_wv3qt"]
+[ext_resource type="PackedScene" uid="uid://b4i7l2fa6ms6c" path="res://Scenes/actionable.tscn" id="14_d8e5x"]
+[ext_resource type="Resource" uid="uid://bnv3lmurx5htf" path="res://dialouge/axe.dialogue" id="15_mynbs"]
+[ext_resource type="Resource" uid="uid://yf5gr3gqvr1e" path="res://dialouge/beanie.dialogue" id="16_3wk7b"]
+[ext_resource type="Resource" uid="uid://6dejh1hmkpej" path="res://dialouge/shoe.dialogue" id="17_eijv7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wkxff"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1511,6 +1515,15 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nubn8"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_trkgg"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vrucr"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uiv77"]
+radius = 2.0
+
 [node name="house_scene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98.2654)
 script = ExtResource("1_wthe5")
@@ -1621,14 +1634,40 @@ max_distance = 50.0
 [node name="Door" parent="." instance=ExtResource("10_aqiwa")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -28.4932, 0.881369, -118.002)
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("11_a2bu4")]
+[node name="Axe" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Axe"]
+
+[node name="axe" parent="Axe/MeshInstance3D" instance=ExtResource("11_a2bu4")]
 transform = Transform3D(-0.00996161, -0.0689669, 0.00665818, -0.00206589, 0.00701929, 0.0696165, -0.0692568, 0.00971054, -0.00303431, -34.6128, -3.62336, -126.544)
 
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("12_y5ffn")]
+[node name="Actionable" parent="Axe" instance=ExtResource("14_d8e5x")]
+dialouge_resource = ExtResource("15_mynbs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Axe/Actionable"]
+shape = SubResource("SphereShape3D_trkgg")
+
+[node name="Beanie" type="RigidBody3D" parent="."]
+
+[node name="beanie" parent="Beanie" instance=ExtResource("12_y5ffn")]
 transform = Transform3D(-0.497632, 0.11793, 1.08557, 0, 1.19298, -0.129599, -1.09195, -0.0537439, -0.494721, -23.6233, 4.46265, -130.618)
 
-[node name="Sketchfab_Scene3" parent="." instance=ExtResource("13_wv3qt")]
+[node name="Actionable" parent="Beanie" instance=ExtResource("14_d8e5x")]
+dialouge_resource = ExtResource("16_3wk7b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Beanie/Actionable"]
+shape = SubResource("SphereShape3D_vrucr")
+
+[node name="Shoe" type="RigidBody3D" parent="."]
+
+[node name="shoe" parent="Shoe" instance=ExtResource("13_wv3qt")]
 transform = Transform3D(0.09, 0, 0, 0, 0.0845723, 0.0307818, 0, -0.0307818, 0.0845723, -52.4693, 4.11866, -120.948)
+
+[node name="Actionable" parent="Shoe" instance=ExtResource("14_d8e5x")]
+dialouge_resource = ExtResource("17_eijv7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shoe/Actionable"]
+shape = SubResource("SphereShape3D_uiv77")
 
 [connection signal="body_entered" from="scare_trigger" to="scare_trigger" method="trigger_entered"]
 [connection signal="body_entered" from="scare_trigger2" to="scare_trigger2" method="trigger_entered"]

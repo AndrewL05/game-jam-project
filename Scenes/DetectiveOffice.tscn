@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dcyjm8b5xly53" path="res://Scenes/player.tscn" id="1_m7l37"]
 [ext_resource type="Script" path="res://Scripts/detective_office.gd" id="1_x7als"]
 [ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="2_x073b"]
-[ext_resource type="Material" uid="uid://boufln2bgalv6" path="res://Materials/light.tres" id="4_j4ukf"]
+[ext_resource type="Material" path="res://Materials/light.tres" id="4_j4ukf"]
 [ext_resource type="PackedScene" uid="uid://degqms6voy565" path="res://Scenes/door.tscn" id="4_pyu85"]
 [ext_resource type="PackedScene" uid="uid://ccori7ysnlf2n" path="res://Scenes/detective.tscn" id="4_tgla4"]
 [ext_resource type="Script" path="res://Scripts/detective.gd" id="5_4kvmh"]
