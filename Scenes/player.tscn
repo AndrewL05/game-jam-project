@@ -49,7 +49,8 @@ collision_mask = 3
 script = ExtResource("3_t3il7")
 
 [node name="Flashlight" type="SpotLight3D" parent="head"]
-spot_range = 1.45261
+light_energy = 4.0
+spot_range = 3.5
 
 [node name="UI" parent="." instance=ExtResource("3_7d448")]
 offset_right = 1152.0

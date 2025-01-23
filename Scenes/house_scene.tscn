@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cq4l56di2jyjs"]
+[gd_scene load_steps=27 format=3 uid="uid://cq4l56di2jyjs"]
 
 [ext_resource type="PackedScene" uid="uid://dcxod2jl75on1" path="res://Scenes/ui.tscn" id="1_l8rjq"]
 [ext_resource type="Script" path="res://Scripts/house_scene.gd" id="1_wthe5"]
@@ -10,6 +10,21 @@
 [ext_resource type="AudioStream" uid="uid://bvg62xpub5tjj" path="res://Assets/sounds/Creepy Little Girl Crying and Weeping Sound Effect  Free Horror Sounds.mp3" id="7_fpk4a"]
 [ext_resource type="AudioStream" uid="uid://mf0giuj3sd2n" path="res://Assets/sounds/Horror SFX Free/Eerie Ambient Sound Effect.mp3" id="8_14s83"]
 [ext_resource type="PackedScene" uid="uid://degqms6voy565" path="res://Scenes/door.tscn" id="10_aqiwa"]
+[ext_resource type="PackedScene" uid="uid://b0qq5ve5khqrd" path="res://Assets/clues/bloody_axe (1).glb" id="11_a2bu4"]
+[ext_resource type="PackedScene" uid="uid://bgywnsiuiew3f" path="res://Assets/clues/better_beanie (1).glb" id="12_y5ffn"]
+[ext_resource type="PackedScene" uid="uid://dblgi6sxdihdo" path="res://Assets/clues/old_converse_shoe (1).glb" id="13_wv3qt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wkxff"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 0.0
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_s6xnv"]
+sky_material = SubResource("ProceduralSkyMaterial_wkxff")
+
+[sub_resource type="Environment" id="Environment_e8wfq"]
+background_mode = 2
+sky = SubResource("Sky_s6xnv")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vdebw"]
 size = Vector3(1.45447, 0.834718, 0.632431)
@@ -1500,6 +1515,14 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98.2654)
 script = ExtResource("1_wthe5")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e8wfq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 1.74846e-07, -7.64274e-15, 0, -4.37114e-08, -1, -1.74846e-07, 1, -4.37114e-08, 0, 0, 0)
+light_energy = 0.0
+shadow_enabled = true
+
 [node name="UI" parent="." instance=ExtResource("1_l8rjq")]
 
 [node name="Player" parent="." instance=ExtResource("2_pbt32")]
@@ -1597,6 +1620,15 @@ max_distance = 50.0
 
 [node name="Door" parent="." instance=ExtResource("10_aqiwa")]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -28.4932, 0.881369, -118.002)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("11_a2bu4")]
+transform = Transform3D(-0.00996161, -0.0689669, 0.00665818, -0.00206589, 0.00701929, 0.0696165, -0.0692568, 0.00971054, -0.00303431, -34.6128, -3.62336, -126.544)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("12_y5ffn")]
+transform = Transform3D(-0.497632, 0.11793, 1.08557, 0, 1.19298, -0.129599, -1.09195, -0.0537439, -0.494721, -23.6233, 4.46265, -130.618)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("13_wv3qt")]
+transform = Transform3D(0.09, 0, 0, 0, 0.0845723, 0.0307818, 0, -0.0307818, 0.0845723, -52.4693, 4.11866, -120.948)
 
 [connection signal="body_entered" from="scare_trigger" to="scare_trigger" method="trigger_entered"]
 [connection signal="body_entered" from="scare_trigger2" to="scare_trigger2" method="trigger_entered"]
